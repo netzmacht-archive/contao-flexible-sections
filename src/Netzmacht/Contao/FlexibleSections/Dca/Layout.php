@@ -27,17 +27,10 @@ class Layout
     {
         $templates = \Controller::getTemplateGroup('block_section');
 
-        $key = array_search('block_section', $templates);
-        if ($key !== false) {
-            unset($templates[$key]);
-        }
+        unset($templates['block_section']);
+        unset($templates['block_sections']);
 
-        $key = array_search('block_sections', $templates);
-        if ($key !== false) {
-            unset($templates[$key]);
-        }
-
-        return array_values($templates);
+        return $templates;
     }
 
     /**
