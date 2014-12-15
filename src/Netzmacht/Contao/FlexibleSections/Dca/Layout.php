@@ -11,10 +11,16 @@
 
 namespace Netzmacht\Contao\FlexibleSections\Dca;
 
+/**
+ * DCA helper class for tl_layout.
+ *
+ * @package Netzmacht\Contao\FlexibleSections\Dca
+ */
 class Layout
 {
     /**
-     * Get all templates for the sections block
+     * Get all templates for the sections block.
+     *
      * @return array
      */
     public function getSectionTemplates()
@@ -35,15 +41,18 @@ class Layout
     }
 
     /**
-     * Load section values as language var
+     * Load section values as language var.
      *
-     * @param $value
-     * @param $dc
+     * @param mixed          $value         Value of the field.
+     * @param \DataContainer $dataContainer DCA driver.
+     *
      * @return mixed
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function loadSectionLabels($value, $dc)
+    public function loadSectionLabels($value, $dataContainer)
     {
-        $sections = deserialize($dc->activeRecord->flexible_sections, true);
+        $sections = deserialize($dataContainer->activeRecord->flexible_sections, true);
 
         foreach ($sections as $section) {
             if (!isset($GLOBALS['TL_LANG']['tl_article'][$section['id']])) {
@@ -55,7 +64,10 @@ class Layout
     }
 
     /**
-     * @param $value
+     * Autocomplee section ids.
+     *
+     * @param string|array $value Sections configuration.
+     *
      * @return array
      */
     public function autoCompleteSectionIds($value)
@@ -79,13 +91,14 @@ class Layout
     }
 
     /**
-     * Store sections in legacy section column
+     * Store sections in legacy section column.
      *
-     * @param $value
-     * @param $dc
+     * @param string|array   $value         Section configuration.
+     * @param \DataContainer $dataContainer DataContainer.
+     *
      * @return mixed
      */
-    public function updateLegacySections($value, $dc)
+    public function updateLegacySections($value, $dataContainer)
     {
         $sections = array();
         $value    = deserialize($value, true);
@@ -96,13 +109,14 @@ class Layout
             }
         }
 
-        $sections                   = implode(',', $sections);
-        $dc->activeRecord->sections = $sections;
+        $sections = implode(',', $sections);
+
+        $dataContainer->activeRecord->sections = $sections;
 
         \Database::getInstance()
             ->prepare('UPDATE tl_layout %s WHERE id=?')
             ->set(array('sections' => $sections))
-            ->execute($dc->id);
+            ->execute($dataContainer->id);
 
         return $value;
     }

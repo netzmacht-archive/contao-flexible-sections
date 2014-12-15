@@ -11,6 +11,11 @@
 
 namespace Netzmacht\Contao\FlexibleSections;
 
+/**
+ * Flexible section template helper. Instantiate it in the fe_* tempalate.
+ *
+ * @package Netzmacht\Contao\FlexibleSections
+ */
 class Helper
 {
     /**
@@ -21,7 +26,9 @@ class Helper
     private $template;
 
     /**
-     * @var
+     * Cached sections specifications.
+     *
+     * @var array
      */
     private $specifications;
 
@@ -38,23 +45,23 @@ class Helper
     /**
      * Get custom section.
      *
-     * @param string $id          Section id.
+     * @param string $sectionId   Section id.
      * @param string $template    Section template.
      * @param bool   $renderEmpty Force section being rendered when being empty.
      *
      * @return string
      */
-    public function getCustomSection($id, $template=null, $renderEmpty=false)
+    public function getCustomSection($sectionId, $template = null, $renderEmpty = false)
     {
         // section specification can be passed instead of the id
-        if (is_array($id)) {
-            $sectionSpec = $id;
-            $id          = $sectionSpec['id'];
+        if (is_array($sectionId)) {
+            $sectionSpec = $sectionId;
+            $sectionId   = $sectionSpec['id'];
         } else {
-            $sectionSpec = $this->getSectionSpecification($id);
+            $sectionSpec = $this->getSectionSpecification($sectionId);
         }
 
-        if (!$renderEmpty && empty($this->template->sections[$id])) {
+        if (!$renderEmpty && empty($this->template->sections[$sectionId])) {
             return '';
         }
 
@@ -67,8 +74,8 @@ class Helper
         }
 
         $blockTemplate          = new \FrontendTemplate($template);
-        $blockTemplate->id      = $id;
-        $blockTemplate->content = $this->template->sections[$id];
+        $blockTemplate->id      = $sectionId;
+        $blockTemplate->content = $this->template->sections[$sectionId];
 
         return $blockTemplate->parse();
     }
@@ -98,23 +105,25 @@ class Helper
             return '';
         }
 
-        $template = new \FrontendTemplate($template);
+        $template           = new \FrontendTemplate($template);
         $template->sections = $sections;
 
         return $template->parse();
     }
 
     /**
+     * Get section specification.
      *
-     * @param $id
-     * @return bool
+     * @param string $sectionId Section id.
+     *
+     * @return array|bool
      */
-    private function getSectionSpecification($id)
+    private function getSectionSpecification($sectionId)
     {
         $sections = $this->getSectionSpecifications();
 
         foreach ($sections as $section) {
-            if ($section['id'] == $id) {
+            if ($section['id'] == $sectionId) {
                 return $section;
             }
         }
@@ -123,10 +132,13 @@ class Helper
     }
 
     /**
-     * @param string|null $position
-     * @return mixed
+     * Get section specifications for a defined position.
+     *
+     * @param string|null $position Output position.
+     *
+     * @return array
      */
-    private function getSectionSpecifications($position=null)
+    private function getSectionSpecifications($position = null)
     {
         if (!$this->specifications) {
             $layout               = static::getPageLayout();
@@ -148,8 +160,11 @@ class Helper
     }
 
     /**
-     * Get Page layout
+     * Get Page layout.
+     *
      * @return \Model|null
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
      */
     private static function getPageLayout()
     {
