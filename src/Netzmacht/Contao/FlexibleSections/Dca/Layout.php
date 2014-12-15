@@ -31,7 +31,7 @@ class Layout
             unset($templates[$key]);
         }
 
-        return $templates;
+        return array_values($templates);
     }
 
     /**

@@ -13,3 +13,8 @@ $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_template'][0] = 'Template';
 $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_template'][1] = 'Ausgabe kann über ein Template gesteuert werden.';
 $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_position'][0] = 'Position';
 $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_position'][1] = 'Position des Layoutbereichs';
+
+/*
+ * Values
+ */
+$GLOBALS['TL_LANG']['tl_layout']['custom'] = 'Manuelle Ausgabe';

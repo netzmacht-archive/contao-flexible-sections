@@ -54,7 +54,7 @@ class Helper
             $sectionSpec = $this->getSectionSpecification($id);
         }
 
-        if (!$renderEmpty && !empty($this->template->sections[$id])) {
+        if (!$renderEmpty && empty($this->template->sections[$id])) {
             return '';
         }
 
@@ -62,7 +62,7 @@ class Helper
             if ($sectionSpec && $sectionSpec['template'] != '') {
                 $template = $sectionSpec['template'];
             } else {
-                $template = 'block_section';
+                $template = 'block_section_simple';
             }
         }
 
@@ -81,7 +81,7 @@ class Helper
      *
      * @return string
      */
-    public function getCustomSections($position, $template='block_sections')
+    public function getCustomSections($position, $template = 'block_sections')
     {
         $specifications = $this->getSectionSpecifications($position);
         $sections       = array();
@@ -129,22 +129,22 @@ class Helper
     private function getSectionSpecifications($position=null)
     {
         if (!$this->specifications) {
-            $layout   = static::getPageLayout();
-            $sections = deserialize($layout->bootstrap_sections, true);
-
-            $this->specifications = $sections;
+            $layout               = static::getPageLayout();
+            $this->specifications = deserialize($layout->flexible_sections, true);
         }
 
         if ($position === null) {
             return $this->specifications;
         }
 
-        return array_filter(
+        $sections = array_filter(
             $this->specifications,
             function ($section) use ($position) {
                 return $section['position'] == $position;
             }
         );
+
+        return $sections;
     }
 
     /**

@@ -1,7 +1,8 @@
 <?php
 
-\MetaPalettes::removeFields('tl_layout', 'sections', array('sections'));
-\MetaPalettes::appendBefore('tl_layout', 'sections', array('flexible_sections'));
+\MetaPalettes::appendFields('tl_layout', 'sections', array('flexible_sections'));
+\MetaPalettes::removeFields('tl_layout', array('sections', 'sposition'));
+
 
 $GLOBALS['TL_DCA']['tl_layout']['fields']['flexible_sections'] = array
 (
