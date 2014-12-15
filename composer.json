@@ -39,5 +39,7 @@
                 "module": "system/modules/flexible-sections"
             }
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
