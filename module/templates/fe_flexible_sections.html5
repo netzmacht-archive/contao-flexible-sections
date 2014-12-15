@@ -1,0 +1,10 @@
+<?php
+
+if(version_compare(VERSION, '3.3', '<')) {
+    include $this->getTemplate('fe_flexible_sections_32');
+}
+elseif(version_compare(VERSION, '3.4', '<')) {
+    include $this->getTemplate('fe_flexible_sections_33');
+} else {
+    include $this->getTemplate('fe_flexible_sections_34');
+}
