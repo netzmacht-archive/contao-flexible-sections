@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * @package    contao-flexible-sections
+ * @author     David Molineus <david.molineus@netzmacht.de>
+ * @copyright  2014-2015 netzmacht creative David Molineus
+ * @license    LGPL 3.0
+ * @filesource
+ *
+ */
+
 \MetaPalettes::appendFields('tl_layout', 'sections', array('flexible_sections'));
 \MetaPalettes::removeFields('tl_layout', array('sections', 'sposition'));
 

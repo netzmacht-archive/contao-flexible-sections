@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * @package    contao-flexible-sections
+ * @author     David Molineus <david.molineus@netzmacht.de>
+ * @copyright  2014-2015 netzmacht creative David Molineus
+ * @license    LGPL 3.0
+ * @filesource
+ *
+ */
+
 \TemplateLoader::addFiles(
     array(
         'block_section_simple'    => 'system/modules/flexible-sections/templates',
