@@ -1,7 +1,7 @@
 
 <div class="custom">
     <?php foreach ($this->sections as $key => $section): ?>
-        <div id="<?php echo standardize($key, true); ?>">
+        <div id="<?php echo standardize($key, true); ?>" <?php if ($this->classes[$key]): ?>class="<?php echo $this->classes[$key]; ?>"<?php endif; ?>>
             <div class="inside">
                 <?php echo $section; ?>
             </div>

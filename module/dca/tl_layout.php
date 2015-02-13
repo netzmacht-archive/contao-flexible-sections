@@ -20,14 +20,21 @@ $GLOBALS['TL_DCA']['tl_layout']['fields']['flexible_sections'] = array
                 'label'     => &$GLOBALS['TL_LANG']['tl_layout']['flexible_sections_label'],
                 'inputType' => 'text',
                 'eval'      => array(
-                    'style' => 'width: 150px',
+                    'style' => 'width: 130px',
                 ),
             ),
             'id' => array(
                 'label'     => &$GLOBALS['TL_LANG']['tl_layout']['flexible_sections_id'],
                 'inputType' => 'text',
                 'eval'      => array(
-                    'style' => 'width: 130px',
+                    'style' => 'width: 100px',
+                ),
+            ),
+            'class' => array(
+                'label'     => &$GLOBALS['TL_LANG']['tl_layout']['flexible_sections_class'],
+                'inputType' => 'text',
+                'eval'      => array(
+                    'style' => 'width: 100px',
                 ),
             ),
             'template' => array(
@@ -45,7 +52,7 @@ $GLOBALS['TL_DCA']['tl_layout']['fields']['flexible_sections'] = array
                 'options'   => array('top', 'before', 'after', 'bottom', 'custom'),
                 'reference' => &$GLOBALS['TL_LANG']['tl_layout'],
                 'eval'      => array(
-                    'style'              => 'width: 200px',
+                    'style'              => 'width: 150px',
                     'includeblankOption' => true,
                 ),
             )

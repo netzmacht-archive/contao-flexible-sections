@@ -92,12 +92,14 @@ class Helper
     {
         $specifications = $this->getSectionSpecifications($position);
         $sections       = array();
+        $classes        = array();
 
         foreach ($specifications as $section) {
             $buffer = $this->getCustomSection($section);
 
             if ($buffer) {
                 $sections[$section['id']] = $buffer;
+                $classes[$section['id']]  = $section['class'];
             }
         }
 
@@ -107,6 +109,7 @@ class Helper
 
         $template           = new \FrontendTemplate($template);
         $template->sections = $sections;
+        $template->classes  = $classes;
 
         return $template->parse();
     }

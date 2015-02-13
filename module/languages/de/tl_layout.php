@@ -13,6 +13,8 @@ $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_template'][0] = 'Template';
 $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_template'][1] = 'Ausgabe kann über ein Template gesteuert werden.';
 $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_position'][0] = 'Position';
 $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_position'][1] = 'Position des Layoutbereichs';
+$GLOBALS['TL_LANG']['tl_layout']['flexible_sections_class'][0]    = 'Css Klasse';
+$GLOBALS['TL_LANG']['tl_layout']['flexible_sections_class'][1]    = 'Css Klasse des Layoutbereichs.';
 
 /*
  * Values

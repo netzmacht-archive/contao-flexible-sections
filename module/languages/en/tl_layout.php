@@ -13,6 +13,8 @@ $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_template'][0] = 'Template';
 $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_template'][1] = 'Template being used for rendering.';
 $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_position'][0] = 'Position';
 $GLOBALS['TL_LANG']['tl_layout']['flexible_sections_position'][1] = 'Position of the section.';
+$GLOBALS['TL_LANG']['tl_layout']['flexible_sections_class'][0]    = 'Css class';
+$GLOBALS['TL_LANG']['tl_layout']['flexible_sections_class'][1]    = 'Css class of custom section.';
 
 /*
  * Values
