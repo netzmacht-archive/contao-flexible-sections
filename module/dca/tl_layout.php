@@ -52,7 +52,6 @@ $GLOBALS['TL_DCA']['tl_layout']['fields']['flexible_sections'] = array
                 'options_callback' => array('Netzmacht\Contao\FlexibleSections\Dca\Layout', 'getSectionTemplates'),
                 'eval'      => array(
                     'style'              => 'width: 100px',
-                    'includeBlankOption' => true,
                     'chosen'             => true,
                     'mandatory'          => true,
                 ),
@@ -64,7 +63,6 @@ $GLOBALS['TL_DCA']['tl_layout']['fields']['flexible_sections'] = array
                 'reference' => &$GLOBALS['TL_LANG']['tl_layout'],
                 'eval'      => array(
                     'style'              => 'width: 150px',
-                    'includeBlankOption' => true,
                     'chosen'             => true,
                     'mandatory'          => true,
                 ),
