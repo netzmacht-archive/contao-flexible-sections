@@ -54,6 +54,7 @@ $GLOBALS['TL_DCA']['tl_layout']['fields']['flexible_sections'] = array
                     'style'              => 'width: 100px',
                     'includeBlankOption' => true,
                     'chosen'             => true,
+                    'mandatory'          => true,
                 ),
             ),
             'position' => array(
@@ -65,6 +66,7 @@ $GLOBALS['TL_DCA']['tl_layout']['fields']['flexible_sections'] = array
                     'style'              => 'width: 150px',
                     'includeBlankOption' => true,
                     'chosen'             => true,
+                    'mandatory'          => true,
                 ),
             )
         )
