@@ -1,0 +1,9 @@
+
+.flexible-sections-mcw .mcwUpdateFields {
+    vertical-align: top;
+}
+
+.flexible-sections-mcw .multicolumnwizard > tbody > tr > td.operations {
+    vertical-align: top;
+    padding-top: 15px;
+}
