@@ -1,4 +1,3 @@
-<?php $helper = new \Netzmacht\Contao\FlexibleSections\Helper($this); ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>">
 <head>
@@ -30,7 +29,7 @@
 <body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?php echo $this->onload; ?>"<?php endif; ?>>
 
 <?php $this->block('body'); ?>
-<?php echo $helper->getCustomSections('top'); ?>
+<?php $this->flexibleSections('top'); ?>
 
 <div id="wrapper">
 
@@ -44,7 +43,7 @@
     <?php endif; ?>
     <?php $this->endblock(); ?>
 
-    <?php echo $helper->getCustomSections('before'); ?>
+    <?php $this->flexibleSections('before'); ?>
 
     <?php $this->block('container'); ?>
     <div id="container">
@@ -54,7 +53,7 @@
             <div class="inside">
                 <?php echo $this->main; ?>
             </div>
-            <?php echo $helper->getCustomSections('main'); ?>
+            <?php $this->flexibleSections('main'); ?>
         </div>
         <?php $this->endblock(); ?>
 
@@ -81,7 +80,7 @@
     </div>
     <?php $this->endblock(); ?>
 
-    <?php echo $helper->getCustomSections('after'); ?>
+    <?php $this->flexibleSections('after'); ?>
 
     <?php $this->block('footer'); ?>
     <?php if ($this->footer): ?>
@@ -95,7 +94,7 @@
 
 </div>
 
-<?php echo $helper->getCustomSections('bottom'); ?>
+<?php $this->flexibleSections('bottom'); ?>
 <?php $this->endblock(); ?>
 
 <?php echo $this->mootools; ?>

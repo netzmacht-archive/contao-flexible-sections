@@ -1,4 +1,3 @@
-<?php $helper = new \Netzmacht\Contao\FlexibleSections\Helper($this); ?>
 <!DOCTYPE html>
 <html lang="<?php echo $this->language; ?>">
 <head>
@@ -34,14 +33,14 @@
         </header>
     <?php endif; ?>
 
-    <?php echo $helper->getCustomSections('before'); ?>
+    <?php $this->flexibleSections('before'); ?>
 
     <div id="container">
         <div id="main">
             <div class="inside">
                 <?php echo $this->main; ?>
             </div>
-            <?php echo $helper->getCustomSections('main'); ?>
+            <?php $this->flexibleSections('main'); ?>
         </div>
 
         <?php if ($this->left): ?>
@@ -61,7 +60,7 @@
         <?php endif; ?>
     </div>
 
-    <?php echo $helper->getCustomSections('after'); ?>
+    <?php $this->flexibleSections('after'); ?>
 
     <?php if ($this->footer): ?>
         <footer id="footer">
@@ -73,7 +72,7 @@
 
 </div>
 
-<?php echo $helper->getCustomSections('bottom'); ?>
+<?php $this->flexibleSections('bottom'); ?>
 
 <?php echo $this->mootools; ?>
 
