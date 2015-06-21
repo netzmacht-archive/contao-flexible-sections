@@ -172,7 +172,9 @@ class Helper
     private static function getPageLayout()
     {
         if (TL_MODE === 'FE' && isset($GLOBALS['objPage'])) {
-            return \LayoutModel::findByPk($GLOBALS['objPage']->layout);
+            $layoutIdKey = $GLOBALS['objPage']->isMobile ? 'mobileLayout' : 'layout';
+
+            return \LayoutModel::findByPk($GLOBALS['objPage']->$layoutIdKey);
         }
 
         return null;
