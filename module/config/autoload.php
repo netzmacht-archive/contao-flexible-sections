@@ -17,5 +17,6 @@
         'fe_flexible_sections_32' => 'system/modules/flexible-sections/templates',
         'fe_flexible_sections_33' => 'system/modules/flexible-sections/templates',
         'fe_flexible_sections_34' => 'system/modules/flexible-sections/templates',
+        'fe_flexible_sections_35' => 'system/modules/flexible-sections/templates',
     )
 );
