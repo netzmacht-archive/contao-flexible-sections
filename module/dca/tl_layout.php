@@ -66,13 +66,13 @@ $GLOBALS['TL_DCA']['tl_layout']['fields']['flexible_sections'] = array
             'position' => array(
                 'label'     => &$GLOBALS['TL_LANG']['tl_layout']['flexible_sections_position'],
                 'inputType' => 'select',
-                'options'   => array('top', 'before', 'after', 'bottom', 'custom'),
+                'options'   => array('top', 'before', 'main', 'after', 'bottom', 'custom'),
                 'reference' => &$GLOBALS['TL_LANG']['tl_layout'],
                 'eval'      => array(
                     'style'              => 'width: 180px',
                     'chosen'             => true,
                     'mandatory'          => true,
-                    'columnPos' => '3',
+                    'columnPos'          => '3',
                 ),
             )
         )
